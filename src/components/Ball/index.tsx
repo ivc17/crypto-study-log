@@ -5,13 +5,15 @@ import React from 'react'
 
 const bobbing = keyframes(`  
 0% { transform: translate(-50%, 0); };
-50% { transform: translate(-50%, 10px); }
-100% { transform: translate(-50%, -20px); }`)
+50% { transform: translate(-50%, 5vh); }
+100% { transform: translate(-50%, -5vh); }`)
 
 const StyledBall = styled(BallSvg, {
   shouldForwardProp: (prop) => !(prop === 'delay')
 })<{ delay?: number }>(({ delay }) => ({
-  animation: `${bobbing} 8s ease-in-out infinite alternate`,
+  animation: `${bobbing} ${
+    Math.random() * 5 + 5
+  }s ease-in-out infinite alternate`,
   animationDelay: `${delay ?? 0}s`
 }))
 
