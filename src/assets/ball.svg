@@ -1,0 +1,12 @@
+<svg  viewBox="0 0 247.5 247.5"><defs>
+<style>.cls-2,.cls-3{stroke:#005bfb;}.cls-2,.cls-3,.cls-4{stroke-miterlimit:10;}.cls-2{mix-blend-mode:hard-light;fill:url(#radial-gradient);}.cls-3{fill:url(#radial-gradient-2);}.cls-4{fill:none;stroke:#8d06ff;mix-blend-mode:color-dodge;}</style>
+<radialGradient id="radial-gradient" cx="129.89" cy="162.94" fx="175.12272649347165" fy="149.30419826430466" r="176.57" gradientTransform="translate(-1.34 -36.93) rotate(-1.05)" gradientUnits="userSpaceOnUse">
+<stop offset="0.15" stop-color="#0032e9"/><stop offset="0.23" stop-color="#0032e9" stop-opacity="0.86"/>
+<stop offset="0.63" stop-color="#0032e9" stop-opacity="0.25"/><stop offset="0.8" stop-color="#0032e9" stop-opacity="0"/>
+</radialGradient>
+<radialGradient id="radial-gradient-2" cx="134.35" cy="175.99" fx="204.193374693712" fy="151.78596757402903" r="176.05" gradientTransform="translate(-1.34 -36.93) rotate(-1.05)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#005adc"/><stop offset="0.93" stop-color="#005bfb" stop-opacity="0"/></radialGradient>
+</defs>
+<circle class="cls-2" cx="123.75" cy="123.75" r="123.25"/>
+<circle class="cls-3" cx="123.75" cy="123.75" r="123.25"/>
+<circle class="cls-4" cx="123.75" cy="123.75" r="123"/>
+</svg>
