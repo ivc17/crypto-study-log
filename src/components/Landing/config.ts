@@ -2,9 +2,8 @@ import cube from 'assets/cube.svg'
 
 export const particleConfig = {
   fpsLimit: 100,
-  fullScreen: true,
+  fullScreen: false,
   interactivity: {
-
     events: {
       onClick: {
         enable: true,
@@ -18,11 +17,11 @@ export const particleConfig = {
     },
     modes: {
       repulse: {
-        distance: 400,
+        distance: 200,
         duration: 0.4
       },
       grab: {
-        distance: 400,
+        distance: 200,
         line_linked: {
           opacity: 1,
         },
@@ -36,9 +35,14 @@ export const particleConfig = {
     links: {
       color: '#00ccff',
       distance: 300,
-      enable: true,
+      // enable: true,
       opacity: 1,
       width: 2,
+      anim: {
+        enable: true,
+        opacity_min: 0.0,
+        sync: false
+      }
     },
     collisions: {
       enable: true
@@ -65,19 +69,14 @@ export const particleConfig = {
         area: 2000
       },
       limit: 0,
-      value: 30
-      // density: {
-      //   enable: true,
-      //   area: 1000
-      // },
-      // value: 70
+      value: 20
     },
     opacity: {
       value: 1,
       anim: {
-        enable: false,
+        enable: true,
         speed: 1,
-        opacity_min: 0.1,
+        opacity_min: 0.8,
         sync: false
       }
     },
@@ -90,7 +89,13 @@ export const particleConfig = {
       type: "image"
     },
     size: {
-      value: { min: 5, max: 60 }
+      value: { min: 5, max: 30 },
+      // anim: {
+      //   enable: false,
+      //   speed: 1,
+      //   opacity_min: 0.1,
+      //   sync: false
+      // }
     }
   },
   // polygon: {

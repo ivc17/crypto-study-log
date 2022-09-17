@@ -1,4 +1,15 @@
-import { Box, SvgIconProps } from '@mui/material'
+import { Box, styled, SvgIconProps } from '@mui/material'
+
+const StyledNav = styled('nav')(({ theme }) => ({
+  height: theme.height.header,
+  position: 'fixed',
+  [theme.breakpoints.down('md')]: {
+    height: theme.height.mobileHeader
+  },
+  '& svg': {
+    height: '100%'
+  }
+}))
 
 export const LogoIcon = (props: SvgIconProps) => {
   return (
@@ -27,11 +38,20 @@ export const LogoIcon = (props: SvgIconProps) => {
 export default function Header() {
   return (
     <>
-      <nav>
-        <Box height="100%">
+      <StyledNav>
+        <Box
+          ml={{
+            xs: 20,
+            md: 40
+          }}
+          height="100%"
+          width="max-content"
+          sx={{ background: (theme) => theme.palette.primary.main }}
+          padding={{ xs: '0 10px', md: '0 15px' }}
+        >
           <LogoIcon />
         </Box>
-      </nav>
+      </StyledNav>
     </>
   )
 }

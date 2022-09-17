@@ -44,7 +44,7 @@ function LightFilter({ color }: { color?: string }) {
 
         <feGaussianBlur in="thicken" stdDeviation="10" result="blurred" />
         <feFlood
-          flood-color={color ?? theme.palette.primary.light}
+          floodColor={color ?? theme.palette.primary.light}
           result="glowColor"
         />
         <feComposite

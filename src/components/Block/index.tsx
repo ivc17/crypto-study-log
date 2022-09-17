@@ -124,41 +124,41 @@ export function BlockStack({
       <Box sx={{ display: lightVisible ? 'visible' : 'none' }}>
         <Light
           blockNum={blockNum}
-          blendMode="color-dodge"
-          height={width / 2}
-          zIndex={25}
-        />
-        <Light
-          blockNum={blockNum}
-          height={width / 2}
-          blendMode="overlay"
-          zIndex={24}
-          color="#D2C0CD"
-        />
-        <LightHalf
-          blockNum={blockNum}
-          height={width / 2}
-          zIndex={23}
-          blendMode="normal"
-          opacity={0.3}
-          color={theme.palette.primary.main}
-        />
-        <LightHalf
-          blockNum={blockNum}
-          height={width / 2}
-          zIndex={22}
-          blendMode="overlay"
-          opacity={1}
-          color="#00ffff"
-        />
-        <Light
-          blockNum={blockNum}
           blendMode="normal"
           height={width / 2}
-          zIndex={21}
+          zIndex={blockNum}
           color={theme.palette.primary.main}
           blur
           opacity={0.3}
+        />{' '}
+        <LightHalf
+          blockNum={blockNum}
+          height={width / 2}
+          zIndex={blockNum}
+          blendMode="overlay"
+          opacity={1}
+          color="#00ffff"
+        />{' '}
+        <LightHalf
+          blockNum={blockNum}
+          height={width / 2}
+          zIndex={blockNum}
+          blendMode="normal"
+          opacity={0.3}
+          color={theme.palette.primary.main}
+        />{' '}
+        <Light
+          blockNum={blockNum}
+          height={width / 2}
+          blendMode="overlay"
+          zIndex={blockNum}
+          color="#D2C0CD"
+        />
+        <Light
+          blockNum={blockNum}
+          blendMode="color-dodge"
+          height={width / 2}
+          zIndex={blockNum}
         />
       </Box>
     </Box>

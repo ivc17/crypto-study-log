@@ -54,13 +54,13 @@ const themeConstants = {
       'linear-gradient(0deg, rgba(0, 19, 255,  0.84) 44.39%, rgba(0, 19, 255, 0) 100%);'
   },
   height: {
-    header: '80px',
+    header: '100px',
     mobileHeader: '67px',
     footer: '60px'
   },
   width: {
     sidebar: '250px',
-    maxContent: '1110px',
+    maxContent: '1440px',
     minContent: '350px'
   },
   shape: {
@@ -121,10 +121,16 @@ export const override: (palette: any) => any & {
 } = (palette: any) => ({
   MuiCssBaseline: {
     styleOverrides: {
+      // html: {
+      //   maxWidth: '100%',
+      //   overflowX: 'hidden'
+      // },
       body: {
         backgroundColor: '#050505',
         fontSize: 16,
+        maxWidth: '100%',
         overflow: 'auto!important',
+        // overflowX: 'hidden',
         paddingRight: '0px!important'
       },
       'html, input, textarea, button, body': {
@@ -147,16 +153,15 @@ export const override: (palette: any) => any & {
     styleOverrides: {
       root: {
         color: palette.primary.contrastText,
-        borderRadius: themeConstants.shape.borderRadius,
+        borderRadius: 0,
         transition: '.3s',
         textTransform: 'none' as const,
-        width: '100%',
+        width: 'max-content',
         height: 60,
         fontSize: 16,
         fontWeight: 500
       },
       contained: {
-        background: themeConstants.gradient.gradient1,
         color: palette.primary.contrastText,
         boxShadow: 'unset',
         '&:hover': {
@@ -208,9 +213,9 @@ export const override: (palette: any) => any & {
 
 const FONTS = {
   title:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
+    "Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
   content:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif"
+    "Helvetica, -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen','Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif"
 }
 
 export const HideOnMobile = styled('div', {
