@@ -1,0 +1,56 @@
+import { Box } from '@mui/material'
+import src from 'assets/keywordBg.png'
+import srcLight from 'assets/keywordsLight2.png'
+import { ReactComponent as KeywordsLight } from 'assets/keywords.svg'
+import { ReactComponent as Shape } from 'assets/GMesh/shape7.svg'
+
+export default function Keywords() {
+  return (
+    <Box mt={100}>
+      <Box
+        maxWidth={(theme) => theme.width.maxContent}
+        margin="0 auto"
+        position="relative"
+      >
+        <Box
+          sx={{
+            width: '80%',
+            height: '100%',
+            // background: (theme) => theme.gradient.gradient1,
+            position: 'absolute',
+            top: 0,
+            left: '50%',
+            zIndex: 3,
+            transform: 'translateX(-50%)',
+            mixBlendMode: 'overlay'
+          }}
+        >
+          <Shape style={{ overflow: 'visible' }} />
+        </Box>
+        <img src={src} alt="" style={{ width: '100%' }} />
+        <img
+          src={srcLight}
+          alt=""
+          style={{
+            width: '100%',
+            zIndex: 2,
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            mixBlendMode: 'color-dodge'
+          }}
+        />
+        <KeywordsLight
+          style={{
+            width: '100%',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            zIndex: 100,
+            mixBlendMode: 'screen'
+          }}
+        />
+      </Box>
+    </Box>
+  )
+}

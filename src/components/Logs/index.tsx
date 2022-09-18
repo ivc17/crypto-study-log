@@ -4,6 +4,9 @@ import { v4 as uuidv4 } from 'uuid'
 import { config } from 'react-spring'
 import { useState } from 'react'
 import Card from './Card'
+import Particles from './Particle'
+import GMesh from './GMesh'
+import Keywords from 'components/Keywords'
 
 const Light = styled('div')(({ theme }) => ({
   background: theme.gradient.gradient1,
@@ -12,7 +15,7 @@ const Light = styled('div')(({ theme }) => ({
   left: 0,
   width: '100%',
   height: 600,
-  zIndex: 2,
+  zIndex: 10,
   pointerEvents: 'none'
 }))
 
@@ -42,7 +45,7 @@ const SidePanel = styled('div')(({ theme }) => ({
 
 const state = {
   offsetRadius: 4,
-  showNavigation: false,
+  showNavigation: true,
   config: config.gentle
 }
 
@@ -93,29 +96,38 @@ export default function Logs() {
   const theme = useTheme()
 
   return (
-    <Box position="relative" minHeight={'100vh'} zIndex={20}>
-      <Box sx={{ '& *': { pointerEvents: 'none' } }}>
-        <SidePanel>
-          <Light />
-        </SidePanel>
+    <>
+      <Box position="relative" minHeight={'150vh'} zIndex={20}>
+        <Box
+          sx={{
+            '& *': { pointerEvents: 'none' },
+            width: '100%'
+          }}
+        >
+          <SidePanel>
+            <Light />
+          </SidePanel>
+        </Box>
+        <Particles />
+        <BottomPanel />
+        <Box
+          height="500px"
+          width="100%"
+          maxWidth={theme.width.maxContent}
+          margin="0 auto"
+          sx={{ overflow: 'hidden', mt: '-200px' }}
+        >
+          <Carousel
+            slides={slides(setSlide)}
+            goToSlide={slide}
+            offsetRadius={state.offsetRadius}
+            showNavigation={state.showNavigation}
+            animationConfig={state.config}
+          />
+        </Box>
+        <GMesh />
+        <Keywords />
       </Box>
-
-      <BottomPanel />
-      <Box
-        height="500px"
-        width="100%"
-        maxWidth={theme.width.maxContent}
-        margin="0 auto"
-        sx={{ overflow: 'hidden', mt: '-200px' }}
-      >
-        <Carousel
-          slides={slides(setSlide)}
-          goToSlide={slide}
-          offsetRadius={state.offsetRadius}
-          showNavigation={state.showNavigation}
-          animationConfig={state.config}
-        />
-      </Box>
-    </Box>
+    </>
   )
 }

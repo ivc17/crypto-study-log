@@ -4,7 +4,7 @@ export default function ColorSplitText({
   text,
   zIndex = 1,
   ...props
-}: { text: string | JSX.Element; zIndex: number } & TypographyProps) {
+}: { text: string | JSX.Element; zIndex?: number } & TypographyProps) {
   return (
     <Box position="relative" overflow="visible">
       <Typography

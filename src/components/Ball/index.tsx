@@ -19,7 +19,7 @@ const StyledBall = styled(BallSvg, {
 
 export default function Ball({
   size = 100,
-  zIndex = 5,
+  zIndex = 20,
   style,
   delay
 }: {

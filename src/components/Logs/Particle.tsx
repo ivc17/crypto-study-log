@@ -3,8 +3,8 @@ import { loadFull } from 'tsparticles'
 import { Box, keyframes, styled } from '@mui/material'
 import TsParticles from 'react-particles'
 import { Container, Engine } from 'tsparticles-engine'
-import { particleConfig } from '../../utils/config'
 import useBreakpoint from 'hooks/useBreakpoint'
+import { configEmitter } from 'utils/config'
 
 const appear = keyframes`
 0% {opacity: 0};
@@ -13,14 +13,16 @@ const appear = keyframes`
 
 const Wrapper = styled(Box)({
   width: '100%',
-  height: '100%',
+  height: '100vh',
   maxWidth: '100%',
   position: 'absolute',
   animation: `${appear} 10s`,
   animationFillMode: 'forwards',
   opacity: 0,
-  animationDelay: '2s',
-  '& #tsparticles': { width: '100%', height: '100%' }
+  animationDelay: '0s',
+  pointerEvents: 'none',
+  zIndex: 3,
+  '&>div': { width: '100%', height: '100%' }
 })
 
 export default function Particles() {
@@ -36,45 +38,30 @@ export default function Particles() {
     (container: Container | undefined) => {
       const tsPContainer = container
       if (!tsPContainer) return
-      // const landing = document.getElementById('landing')
       tsPContainer.canvas.resize()
-      // tsPContainer.options.particles.opacity.value = 0
-      const links = tsPContainer.options.particles.links as any
-      // const isDownMd = window.innerWidth < 900
-      // if (
-      //   landing?.clientHeight &&
-      //   links &&
-      //   window.scrollY > landing.clientHeight / 3
-      // ) {
-      //   tsPContainer.options.particles.number.value = 10
-      //   links.opacity = 0
-      //   setRefreshFlag(true)
-      // } else {
-      //   tsPContainer.options.particles.number.value = isDownMd ? 20 : 30
-      //   links.opacity = 1
-      //   setRefreshFlag(false)
-      // }
-      if (isDownMd) {
-        tsPContainer.options.particles.number.value = 15
-      } else {
-        tsPContainer.options.particles.number.value = 20
-      }
       if (isDownLg) {
-        links.distance = 150
+        if (isDownMd) {
+          if (isDownSm) {
+            tsPContainer.options.particles.number.value = 5
+          }
+          tsPContainer.options.particles.size.value = { min: 1, max: 5 }
+        } else {
+          tsPContainer.options.particles.number.value = 10
+        }
         tsPContainer.options.particles.size.value = { min: 5, max: 20 }
       } else {
-        links.distance = 200
-        tsPContainer.options.particles.size.value = { min: 5, max: 20 }
+        tsPContainer.options.particles.number.value = 15
+        tsPContainer.options.particles.size.value = { min: 5, max: 25 }
       }
     },
-    [isDownLg]
+    [isDownLg, isDownMd, isDownSm]
   )
 
   const particlesInit = useCallback(async (engine: Engine) => {
     // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
-    console.log(engine)
+    // console.log(engine)
     await loadFull(engine)
   }, [])
 
@@ -105,15 +92,15 @@ export default function Particles() {
 
   useEffect(() => {
     tsPContainer && tsPContainer.refresh()
-  }, [tsPContainer, isDownMd])
+  }, [tsPContainer, isDownMd, isDownLg])
 
   return (
-    <Wrapper zIndex={10}>
+    <Wrapper>
       <TsParticles
-        id="tsparticles"
+        id="tsparticlesEmitter"
         init={particlesInit}
         loaded={particlesLoaded}
-        options={particleConfig}
+        options={configEmitter}
       />
     </Wrapper>
   )

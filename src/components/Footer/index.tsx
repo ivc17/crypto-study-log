@@ -1,4 +1,5 @@
 import { Box, useTheme, Typography, styled } from '@mui/material'
+import { ReactComponent as Icon } from 'assets/icon.svg'
 
 const Light = styled('div')(({ theme }) => ({
   background: theme.gradient.gradient2,
@@ -35,11 +36,37 @@ const SidePanel = styled('footer')(({ theme }) => ({
 
 export default function Footer() {
   return (
-    <Box>
-      <TopPanel sx={{}} />
-      <Box sx={{}}>
+    <Box zIndex={2} position="relative">
+      <Box
+        zIndex={4}
+        position="absolute"
+        maxWidth={(theme) => theme.width.maxContent}
+        padding="0 60px"
+        width="80%"
+        display="grid"
+        left="50%"
+        sx={{ transform: 'translateX(-50%)' }}
+        gap={40}
+        bottom={200}
+      >
+        <Typography fontSize={28} fontWeight={700}>
+          IVC17
+        </Typography>
+        <Box display={'flex'} width="100%" justifyContent={'space-between'}>
+          {' '}
+          <Typography fontSize={20}>about</Typography>
+          <Typography fontSize={20}>contact</Typography>
+          <Typography fontSize={20}>work</Typography>
+        </Box>
+
+        <Box mt={30}>
+          <Icon /> <Icon /> <Icon /> <Icon /> <Icon /> <Icon />
+        </Box>
+      </Box>
+      <TopPanel></TopPanel>
+      <Box>
         <SidePanel>
-          <Light />
+          <Light></Light>
           ©2022 IVC17 Crypto Study Log. All rights reserved.
         </SidePanel>
       </Box>

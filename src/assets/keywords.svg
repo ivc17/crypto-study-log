@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1435.23 907.96">
+<defs>
+  <style>.cls-1,.cls-2,.cls-6,.cls-9{stroke:#005bfb;}
+  .cls-1,.cls-11,.cls-2,.cls-5,.cls-6,.cls-7,.cls-8,.cls-9{stroke-miterlimit:10;}
+  .cls-1,.cls-11,.cls-15{mix-blend-mode:hard-light;}
+  .cls-1{fill:url(#radial-gradient);}
+  .cls-2{fill:url(#radial-gradient-2);}
+  .cls-11,.cls-16,.cls-4,.cls-5,.cls-6,.cls-7,.cls-8{fill:none;}
+  .cls-12,.cls-13,.cls-14,.cls-4,.cls-7{mix-blend-mode:color-dodge;}
+  .cls-5,.cls-7,.cls-8{stroke:#00edff;}
+  .cls-7{stroke-width:2px;opacity:0.51;}
+  .cls-15,.cls-8{opacity:0.59;}
+  .cls-9{fill:#0013ff;}.cls-10{fill:#00edff;}
+  .cls-11{stroke:#8d06ff;opacity:0.62;}
+  .cls-12{fill:url(#linear-gradient);}
+  .cls-13{
+    fill:url(#linear-gradient-2);opacity:0.8;
+    }
+    .cls-14{fill:url(#linear-gradient-3);}
+    .cls-15{fill:url(#radial-gradient-3);}
+  </style>
+  <radialGradient id="radial-gradient" cx="111.58" cy="105" fx="149.93459811386717" fy="93.43989975869911" r="149.71" gradientUnits="userSpaceOnUse">
+    <stop offset="0.15" stop-color="#0032e9"/>
+    <stop offset="0.23" stop-color="#0032e9" stop-opacity="0.86"/>
+    <stop offset="0.63" stop-color="#0032e9" stop-opacity="0.25"/>
+    <stop offset="0.8" stop-color="#0032e9" stop-opacity="0"/>
+  </radialGradient>
+
+  <radialGradient id="radial-gradient-2" cx="115.36" cy="116.06" fx="174.58273391041934" fy="95.54411795639626" r="149.27" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#005adc"/>
+    <stop offset="0.93" stop-color="#005bfb" stop-opacity="0"/>
+  </radialGradient>
+
+  <linearGradient id="linear-gradient" x1="1010.5" y1="346.17" x2="1010.5" y2="339.1" gradientUnits="userSpaceOnUse">
+    <stop offset="0" stop-color="#333"/>
+    <stop offset="0.05" stop-color="#454545"/>
+    <stop offset="0.2" stop-color="#707070"/>
+    <stop offset="0.27" stop-color="gray"/>
+    <stop offset="0.3" stop-color="#898989"/>
+    <stop offset="0.35" stop-color="#a3a3a3"/>
+    <stop offset="0.42" stop-color="#ccc"/>
+    <stop offset="0.49" stop-color="#fff"/>
+    <stop offset="0.52" stop-color="#f6f6f6"/>
+    <stop offset="0.57" stop-color="#dcdcdc"/>
+    <stop offset="0.64" stop-color="#b3b3b3"/>
+    <stop offset="0.71" stop-color="#7a7a7a"/>
+    <stop offset="0.74" stop-color="#666"/>
+    <stop offset="0.8" stop-color="#5d5d5d"/>
+    <stop offset="0.91" stop-color="#434343"/>
+    <stop offset="0.96" stop-color="#333"/>
+  </linearGradient>
+
+<linearGradient id="linear-gradient-2" x1="985.5" y1="601.17" x2="985.5" y2="594.1" xlink:href="#linear-gradient"/>
+
+<linearGradient id="linear-gradient-3" x1="-330.7" y1="-351.94" x2="-330.7" y2="-355.99" gradientTransform="translate(1136.07 1210.77) scale(0.78 1.9)" xlink:href="#linear-gradient"/>
+
+<radialGradient id="radial-gradient-3" cx="443.53" cy="381.49" r="37.97" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="#0032e9"/><stop offset="0.09" stop-color="#0032e9" stop-opacity="0.96"/>
+  <stop offset="0.24" stop-color="#0032e9" stop-opacity="0.85"/>
+  <stop offset="0.43" stop-color="#0032e9" stop-opacity="0.67"/>
+  <stop offset="0.66" stop-color="#0032e9" stop-opacity="0.42"/>
+  <stop offset="0.91" stop-color="#0032e9" stop-opacity="0.11"/>
+  <stop offset="1" stop-color="#0032e9" stop-opacity="0"/>
+</radialGradient>
+
+<symbol id="New_Symbol" data-name="New Symbol" viewBox="0 0 210 210">
+<circle class="cls-1" cx="105" cy="105" r="104.5"/>
+<circle class="cls-2" cx="105" cy="105" r="104.5"/>
+</symbol>
+</defs>
+
+
+<polygon class="cls-4" points="821 597.51 1155 597.51 1155 447 971.51 447 821 597.51" id='right-corner'/>
+
+<path class="cls-5" d="M513.83,544.61A280.34,280.34,0,0,1,510,380l-28.86-8.19a310.34,310.34,0,0,0,4.2,182.34l6.62-2.22a300.29,300.29,0,0,0,57.42,100.87l12.12-10.44a284.37,284.37,0,0,1-54.36-95.51Z"/>
+<path class="cls-5" d="M840,159.53A302.83,302.83,0,0,1,1073.58,519,299.4,299.4,0,0,1,529.32,621,295.74,295.74,0,0,1,723.08,168.66a294.35,294.35,0,0,1,114.65,1.64Zm-2.23,10.77A291.61,291.61,0,0,0,493.15,512,288.06,288.06,0,0,0,935.41,697.3a284.73,284.73,0,0,0,2-473.81,283.17,283.17,0,0,0-101.89-42.42Z" id='circle' stroke-dasharray="1000">
+  <animate attributeName="stroke-dasharray" values="1000;500;100;2000;2000;2000" dur="10s" repeatCount="indefinite" /> 
+</path>
+
+<polyline class="cls-6" points="769 410.79 769 411.71 1435 60" id='towards-right-corner' stroke-dashoffset="1000" stroke-dasharray="1000">
+  <animate attributeName="stroke-dashoffset" values="1000;0;" dur="1s" repeatCount="1" fill="freeze"/> 
+</polyline>
+
+<polyline class="cls-7" points="264.5 688 264.5 81.5 769.5 81.5 769.5 880.5" id='extend' stroke-dashoffset="2000" stroke-dasharray="2000">  
+<animate id='extendA' attributeName="stroke-dashoffset" values="2000;0;" dur="1s" repeatCount="1" fill="freeze"/> 
+</polyline>
+
+<polygon class="cls-5" points="873 243 773.23 342.77 1248.5 342.77 1248.5 242.5 873 243" stroke-dashoffset="2000" stroke-dasharray="2000">
+  <animate  attributeName="stroke-dashoffset" values="2000;1500;500;0;0;0;0;0;0;0;0;0;-500;-1000;" dur="6s" repeatCount="indefinite" fill="freeze"/> 
+</polygon>
+
+<polygon class="cls-5" points="820.96 597.53 1155 597.53 1155 447 971.49 447 820.96 597.53" stroke-dashoffset="2000" stroke-dasharray="2000">
+  <animate  attributeName="stroke-dashoffset" values="2000;1500;500;0;0;0;0;0;0;0;0;-500;-1000;" dur="5s" repeatCount="indefinite" fill="freeze"/> 
+</polygon>
+
+<polygon class="cls-5" points="655 665.96 655 412 537 412 537 782.86 655 665.96" stroke-dashoffset="2000" stroke-dasharray="2000">
+  <animate  attributeName="stroke-dashoffset" values="2000;1500;500;0;0;0;0;0;0;0;0;-500;-1000;" dur="3s" repeatCount="indefinite" fill="freeze"/> 
+</polygon>
+
+<circle class="cls-8" cx="778" cy="456.17" r="293.5"/>
+<line class="cls-9" y1="412" x2="1394" y2="412"/>
+<path class="cls-10" d="M497,0c.92,83.39,1.18,210.42,1,294.92l-1-1H657V600c.15,87.42,0,218.54-1,305-1-86.16-1.15-217.72-1-305v-305l1,1H496v-1c0-84.64,0-211.18,1-294.92Z"/>
+<rect class="cls-11" x="349.5" y="480.5" width="489" height="120" transform="translate(1134.5 -53.5) rotate(90)" id='rect'></rect>
+<rect class="cls-11" x="535.9" y="292.45" width="118" height="487"/>
+
+<path class="cls-5" d="M744.79,739.76a283.69,283.69,0,0,1-153-67.14l-10.44,12.13A299.58,299.58,0,0,0,743,755.65a305.54,305.54,0,0,0,35,2v-16A291.6,291.6,0,0,1,744.79,739.76Z" id='path'/>
+
+
+
+<ellipse class="cls-12" cx="1010.5" cy="342.5" rx="238.5" ry="4.5" opacity='0'>
+  <animate  attributeName="opacity" values="0.5;0.5;1;1;1;0.5;0.5;" dur="6s" repeatCount="indefinite" fill="freeze"/> 
+  </ellipse>
+<ellipse class="cls-13" cx="985.5" cy="597.5" rx="169.5" ry="4.5" opacity='0'>
+  <animate  attributeName="opacity" values="0.5;0.5;1;1;1;0.5;0.5;" dur="3s" repeatCount="indefinite" fill="freeze"/> </ellipse>
+<ellipse class="cls-14" cx="878.45" cy="539.64" rx="84.28" ry="4.89" transform="translate(-124.29 779.21) rotate(-45)" opacity='0'>
+  <animate  attributeName="opacity" values="0.5;0.5;1;1;1;0.5;0.5;" dur="3s" repeatCount="indefinite" fill="freeze"/></ellipse>
+
+<use width="60" height="60" transform="408 347" xlink:href="#New_Symbol">
+  <animateTransform attributeName="transform"       
+  type="translate"    
+  values="408 347;399 320;408.29 328;408 347;"
+  dur="10s" repeatCount="indefinite" fill="freeze"     
+/> 
+ </use>
+<circle class="cls-15" cx="443.53" cy="381.49" r="37.97">
+</circle>
+<rect class="cls-16" width="1435" height="907.96"/>
+
+</svg>
