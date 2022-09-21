@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled'
 import PropTypes from 'prop-types'
 import Slide from './Slide'
+import { Button } from '@mui/material'
 
 const Wrapper = styled.div`
   position: relative;
@@ -9,11 +10,12 @@ const Wrapper = styled.div`
   justify-content: center;
   width: 100%;
   height: 100%;
+  margin-top: 30px;
 `
 
 const NavigationButtons = styled.div`
   position: absolute;
-  top: 50px;
+  top: 20px;
   display: flex;
   height: 60px;
   margin: 0 auto;
@@ -21,13 +23,6 @@ const NavigationButtons = styled.div`
   margin-top: 1rem;
   justify-content: center;
   z-index: 1000;,
-`
-
-const NavBtn = styled.div`
-  padding: 15px;
-  margin-bottom: 10px;
-  border-radius: 3px;
-  font-size: 40px;
 `
 
 function mod(a, b) {
@@ -120,8 +115,14 @@ class VerticalCarousel extends React.Component {
     return (
       <>
         <NavigationButtons>
-          <NavBtn onClick={() => this.moveSlide(1)}>&#8593;</NavBtn>
-          <NavBtn onClick={() => this.moveSlide(-1)}>&#8595;</NavBtn>
+          <Button onClick={() => this.moveSlide(-1)} variant="outlined">
+            PREV
+          </Button>
+          <Button onClick={() => this.moveSlide(1)} variant="outlined">
+            NEXT
+          </Button>
+          {/* <NavBtn onClick={() => this.moveSlide(1)}>&#8593;</NavBtn>
+          <NavBtn onClick={() => this.moveSlide(-1)}>&#8595;</NavBtn> */}
         </NavigationButtons>
         <Wrapper>
           {this.getPresentableSlides().map((slide, presentableIndex) => (

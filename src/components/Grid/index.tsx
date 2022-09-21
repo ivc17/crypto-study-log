@@ -1,5 +1,5 @@
-import { Box, Button, Typography } from '@mui/material'
-import { ReactComponent as GridSvg } from 'assets/grid.svg'
+import { Box, Typography } from '@mui/material'
+// import { ReactComponent as GridSvg } from 'assets/grid.svg'
 import gridUrl from 'assets/grid.svg'
 import ColorSplitText from 'components/ColorSplitText'
 
@@ -19,12 +19,20 @@ export default function Grid() {
       }}
     >
       {/* <GridSvg style={{ position: 'absolute', top: 0, left: 0 }} /> */}
-      <Box display="grid" justifyItems="center" gap={{ xs: 30, md: 90 }}>
-        <ColorSplitText
-          text="About Project"
-          fontSize={{ xs: 40, md: 50 }}
-          fontWeight={700}
-        ></ColorSplitText>
+      <Box
+        display="grid"
+        justifyItems="center"
+        gap={{ xs: 30, md: 90 }}
+        marginTop={-100}
+      >
+        <Box display="grid" justifyItems="center">
+          <ColorSplitText
+            text="About Project"
+            fontSize={{ xs: 40, md: 50 }}
+            fontWeight={700}
+          ></ColorSplitText>
+          <ColorSplitText text="プロジェクトについて"></ColorSplitText>
+        </Box>
 
         <Typography width={'250px'} textAlign="center">
           This is an experimental project that aims to test out the possibility
@@ -34,9 +42,9 @@ export default function Grid() {
           irregurarly. The moset difficult part of making the project is taking
           performance into account, have to cut down on my ideas because of it.
         </Typography>
-        <Button sx={{ background: '#ffffff', color: '#000000' }}>
-          sduhsod
-        </Button>
+        {/* <Button sx={{ background: '#ffffff', color: '#000000' }}>
+          More
+        </Button> */}
       </Box>
     </Box>
   )

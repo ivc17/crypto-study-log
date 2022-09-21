@@ -3,6 +3,7 @@ import { Box, styled, SvgIconProps } from '@mui/material'
 const StyledNav = styled('nav')(({ theme }) => ({
   height: theme.height.header,
   position: 'fixed',
+  zIndex: 4,
   [theme.breakpoints.down('md')]: {
     height: theme.height.mobileHeader
   },

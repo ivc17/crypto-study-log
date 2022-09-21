@@ -1,4 +1,4 @@
-import { Box, keyframes, styled, useTheme } from '@mui/material'
+import { Box, Button, keyframes, styled, useTheme } from '@mui/material'
 import Carousel from 'react-spring-3d-carousel'
 import { v4 as uuidv4 } from 'uuid'
 import { config } from 'react-spring'
@@ -11,6 +11,9 @@ import gradient from 'assets/gradient.png'
 import useBreakpoint from 'hooks/useBreakpoint'
 import VerticalCarousel from 'components/VerticalCarousel/VerticalCarousel'
 import ColorSplitText from 'components/ColorSplitText'
+import { useLocation, useNavigate } from 'react-router-dom'
+import { routes } from 'constant/routes'
+import { NOTES } from 'constant/notes'
 
 // const appear = keyframes`
 // 0% {opacity: 0.6; };
@@ -93,49 +96,19 @@ const SidePanel = styled('div')(({ theme }) => ({
 
 const state = {
   offsetRadius: 4,
-  showNavigation: true,
+  showNavigation: false,
   config: config.gentle
 }
 
 const slides = (setSlide: any) =>
-  [
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    },
-    {
-      key: uuidv4(),
-      content: <Card />
-    }
-  ].map((slide, index) => {
+  NOTES.map(({ title, description, id, date }) => ({
+    key: uuidv4(),
+    content: (
+      <Card title={title} id={id} date={date}>
+        {description}
+      </Card>
+    )
+  })).map((slide, index) => {
     return { ...slide, onClick: () => setSlide(index) }
   })
 
@@ -144,6 +117,8 @@ export default function Logs() {
   const theme = useTheme()
   // const isDownMd = useBreakpoint('md')
   const isDownSm = useBreakpoint('sm')
+  const navigate = useNavigate()
+  const location = useLocation()
 
   return (
     <>
@@ -156,14 +131,23 @@ export default function Logs() {
         >
           <SidePanel>
             <Light />
-            <Box position={'absolute'} top={'100%'}>
+            <Box
+              position={'absolute'}
+              top={'100%'}
+              display="grid"
+              justifyItems={'center'}
+            >
               <ColorSplitText
                 text={'Study Logs'}
                 fontWeight={700}
                 fontSize={{ xs: 40, md: 50 }}
                 zIndex={10}
               ></ColorSplitText>
-              <ColorSplitText text="スタディ・ログ" fontWeight={700} />
+              <ColorSplitText
+                text="スタディ・ログ"
+                fontWeight={700}
+                zIndex={10}
+              />
             </Box>
           </SidePanel>
           <StyledImg src={gradient} alt=""></StyledImg>
@@ -171,26 +155,75 @@ export default function Logs() {
         <BottomPanel />
 
         {isDownSm ? (
-          <Box height="800px" position="relative" marginTop={-200}>
+          <Box height="700px" position="relative" marginTop={-150}>
             <VerticalCarousel slides={slides(setSlide)} />
           </Box>
         ) : (
-          <Box
-            height="500px"
-            width="100%"
-            maxWidth={theme.width.maxContent}
-            margin="0 auto"
-            sx={{ overflow: 'hidden', mt: '-200px' }}
-          >
-            <Carousel
-              slides={slides(setSlide)}
-              goToSlide={slide}
-              offsetRadius={state.offsetRadius}
-              showNavigation={state.showNavigation}
-              animationConfig={state.config}
-            />{' '}
+          <Box position="relative" marginTop={{ sm: -100, md: -250 }}>
+            <Box
+              zIndex={10}
+              sx={{
+                position: 'absolute',
+                top: '30%',
+                left: 0,
+                width: '100%',
+                display: 'flex',
+                justifyContent: 'space-between',
+                padding: '20px'
+              }}
+            >
+              <Button
+                variant="outlined"
+                onClick={() =>
+                  setSlide((idx) => (idx === 0 ? slides.length - 1 : idx - 1))
+                }
+              >
+                PREV
+              </Button>
+              <Button
+                variant="outlined"
+                onClick={() => {
+                  setSlide((idx) => (idx === slides.length - 1 ? 0 : idx + 1))
+                }}
+              >
+                NEXT
+              </Button>
+            </Box>
+            <Box
+              height="500px"
+              width="100%"
+              maxWidth={theme.width.maxContent}
+              margin="-100px auto 0"
+              sx={{
+                overflow: 'hidden'
+              }}
+            >
+              <Carousel
+                slides={slides(setSlide)}
+                goToSlide={slide}
+                offsetRadius={state.offsetRadius}
+                showNavigation={state.showNavigation}
+                animationConfig={state.config}
+              />
+            </Box>
           </Box>
         )}
+        <Box width="100%" display="flex" justifyContent={'center'}>
+          <Button
+            sx={{ width: '200px!important', fontWeight: 700 }}
+            style={{
+              width: '200px',
+              marginTop: 60,
+              marginBottom: isDownSm ? 100 : 0
+            }}
+            variant="outlined"
+            onClick={() =>
+              navigate(routes['all-log'], { state: location.pathname })
+            }
+          >
+            See All
+          </Button>
+        </Box>
         {/* <ParticlesGradient /> */}
         {/* <GradientCanvas /> */}
         {/* <GMesh /> */}

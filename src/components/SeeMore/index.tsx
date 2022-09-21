@@ -1,9 +1,12 @@
 import { Box, Button, Typography, useTheme } from '@mui/material'
 import ColorSplitText from 'components/ColorSplitText'
+import useBreakpoint from 'hooks/useBreakpoint'
 import React from 'react'
 
 export default function SeeMore() {
   const theme = useTheme()
+  const isDownSm = useBreakpoint('sm')
+  const unit = isDownSm ? 30 : 50
   return (
     <Box
       height="100vh"
@@ -13,7 +16,7 @@ export default function SeeMore() {
       display="flex"
       justifyContent={'center'}
       alignItems={{ xs: 'unset', md: 'center' }}
-      zIndex={4}
+      zIndex={3}
       overflow="hidden"
       margin={{ xs: '100px 0 200px', md: ' 100px 0 300px' }}
     >
@@ -32,7 +35,7 @@ export default function SeeMore() {
             position: 'relative',
             minHeight: 800,
 
-            minWidth: 350
+            minWidth: 380
           }}
         >
           <Box
@@ -54,18 +57,22 @@ export default function SeeMore() {
               }}
               gap={{ xs: 30, md: 90 }}
             >
-              <ColorSplitText
-                text="More work"
-                fontSize={{ xs: 40, md: 50 }}
-                fontWeight={700}
-              ></ColorSplitText>
+              <Box sx={{ display: 'grid', justifyItems: 'center' }}>
+                <ColorSplitText
+                  text="More Projects"
+                  fontSize={{ xs: 40, md: 50 }}
+                  fontWeight={700}
+                  zIndex={2}
+                ></ColorSplitText>
+                <ColorSplitText text="もっと" fontWeight={700}></ColorSplitText>
+              </Box>
               <Typography width={'100%'} maxWidth={250}>
                 Checkout my other work here.
                 <br /> I am always looking for next exciting project, drop me a
                 message here if you’ have any cool ideas that wants to be
                 carried out.
               </Typography>
-              <Button>sduhsod</Button>
+              <Button>More Projects</Button>
             </Box>
           </Box>
           <Box
@@ -76,21 +83,32 @@ export default function SeeMore() {
             sx={{ transform: 'translateX(-50%)' }}
             height="100%"
             width="100%"
+            zIndex={-1}
           >
-            <LightStrip style={{ top: 50, left: 0 }} />
+            <LightStrip style={{ top: unit, left: 0 }} />
             <LightStrip
               color="purple"
-              style={{ top: 0, left: 50 }}
+              style={{ top: 0, left: unit }}
               orientation="v"
               left
             />
             <LightStrip
               orientation="v"
-              style={{ bottom: -50, right: 50, left: 'unset', top: 'unset' }}
+              style={{
+                bottom: -unit,
+                right: unit,
+                left: 'unset',
+                top: 'unset'
+              }}
             />
             <LightStrip
               bottom
-              style={{ bottom: 100, right: 0, left: 'unset', top: 'unset' }}
+              style={{
+                bottom: 2 * unit,
+                right: 0,
+                left: 'unset',
+                top: 'unset'
+              }}
             />
           </Box>
         </Box>

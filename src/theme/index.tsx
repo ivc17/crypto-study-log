@@ -129,7 +129,7 @@ export const override: (palette: any) => any & {
         backgroundColor: '#000000',
         fontSize: 16,
         maxWidth: '100%',
-        overflow: 'auto!important',
+        // overflow: 'auto!important',
         // overflowX: 'hidden',
         paddingRight: '0px!important'
       },
@@ -182,12 +182,12 @@ export const override: (palette: any) => any & {
       },
       outlined: {
         backgroundColor: 'transparent',
-        borderColor: palette.primary.main,
-        color: palette.primary.main,
+        borderColor: palette.primary.light,
+        color: palette.primary.light,
         '&:hover, :active': {
           backgroundColor: 'transparent',
-          borderColor: palette.primary.dark,
-          color: palette.primary.dark
+          borderColor: '#ffffff',
+          color: '#ffffff'
         },
         '&:disabled': {
           opacity: palette.action.disabledOpacity
@@ -195,18 +195,18 @@ export const override: (palette: any) => any & {
       },
       text: {
         backgroundColor: 'transparent',
-        color: palette.primary.main,
+        color: '#ffffff',
         fontWeight: 500,
         '&:hover, :active': {
           backgroundColor: 'transparent',
-          color: palette.primary.dark,
+          color: '#aaaaaa',
           opacity: 1
         }
       },
       textPrimary: {
-        color: palette.primary.main,
+        color: '#ffffff',
         '&:hover, :active': {
-          color: palette.primary.dark
+          color: '#aaaaaa'
         }
       }
     }
