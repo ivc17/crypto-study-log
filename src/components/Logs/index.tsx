@@ -5,8 +5,13 @@ import { config } from 'react-spring'
 import { useState } from 'react'
 import Card from './Card'
 import Particles from './Particle'
-import GMesh from './GMesh'
 import Keywords from 'components/Keywords'
+// import GradientCanvas from './GradientCanvas'
+// import GMesh from './GMesh'
+import gradient from 'assets/gradient.png'
+import useBreakpoint from 'hooks/useBreakpoint'
+import VerticalCarousel from 'components/VerticalCarousel/VerticalCarousel'
+import ColorSplitText from 'components/ColorSplitText'
 
 const Light = styled('div')(({ theme }) => ({
   background: theme.gradient.gradient1,
@@ -94,10 +99,12 @@ const slides = (setSlide: any) =>
 export default function Logs() {
   const [slide, setSlide] = useState(0)
   const theme = useTheme()
+  // const isDownMd = useBreakpoint('md')
+  const isDownSm = useBreakpoint('sm')
 
   return (
     <>
-      <Box position="relative" minHeight={'150vh'} zIndex={20}>
+      <Box position="relative" zIndex={1}>
         <Box
           sx={{
             '& *': { pointerEvents: 'none' },
@@ -106,26 +113,58 @@ export default function Logs() {
         >
           <SidePanel>
             <Light />
+            <Box position={'absolute'} top={'100%'}>
+              <ColorSplitText
+                text={'Logs'}
+                fontWeight={700}
+                fontSize={{ xs: 40, lg: 40 }}
+                zIndex={10}
+              ></ColorSplitText>
+            </Box>
           </SidePanel>
+          <img
+            src={gradient}
+            alt=""
+            style={{
+              maxWidth: '1440px',
+              position: 'absolute',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '100%',
+              zIndex: -2,
+              height: '200vh'
+              // mixBlendMode: 'hard-light'
+              // filter: 'blur(5px)'
+            }}
+          ></img>
         </Box>
         <Particles />
         <BottomPanel />
-        <Box
-          height="500px"
-          width="100%"
-          maxWidth={theme.width.maxContent}
-          margin="0 auto"
-          sx={{ overflow: 'hidden', mt: '-200px' }}
-        >
-          <Carousel
-            slides={slides(setSlide)}
-            goToSlide={slide}
-            offsetRadius={state.offsetRadius}
-            showNavigation={state.showNavigation}
-            animationConfig={state.config}
-          />
-        </Box>
-        <GMesh />
+
+        {isDownSm ? (
+          <Box height="800px" position="relative" marginTop={-200}>
+            <VerticalCarousel slides={slides(setSlide)} />
+          </Box>
+        ) : (
+          <Box
+            height="500px"
+            width="100%"
+            maxWidth={theme.width.maxContent}
+            margin="0 auto"
+            sx={{ overflow: 'hidden', mt: '-200px' }}
+          >
+            <Carousel
+              slides={slides(setSlide)}
+              goToSlide={slide}
+              offsetRadius={state.offsetRadius}
+              showNavigation={state.showNavigation}
+              animationConfig={state.config}
+            />{' '}
+          </Box>
+        )}
+        {/* <ParticlesGradient /> */}
+        {/* <GradientCanvas /> */}
+        {/* <GMesh /> */}
         <Keywords />
       </Box>
     </>

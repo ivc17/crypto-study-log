@@ -115,8 +115,9 @@
 <ellipse class="cls-14" cx="878.45" cy="539.64" rx="84.28" ry="4.89" transform="translate(-124.29 779.21) rotate(-45)" opacity='0'>
   <animate  attributeName="opacity" values="0.5;0.5;1;1;1;0.5;0.5;" dur="3s" repeatCount="indefinite" fill="freeze"/></ellipse>
 
-<use width="60" height="60" transform="408 347" xlink:href="#New_Symbol">
-  <animateTransform attributeName="transform"       
+<use width="60" height="60" transform="translate(408 347) " xlink:href="#New_Symbol">
+  <animateTransform 
+  attributeName="transform"       
   type="translate"    
   values="408 347;399 320;408.29 328;408 347;"
   dur="10s" repeatCount="indefinite" fill="freeze"     

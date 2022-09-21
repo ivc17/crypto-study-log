@@ -2,15 +2,22 @@ import { Box } from '@mui/material'
 import src from 'assets/keywordBg.png'
 import srcLight from 'assets/keywordsLight2.png'
 import { ReactComponent as KeywordsLight } from 'assets/keywords.svg'
-import { ReactComponent as Shape } from 'assets/GMesh/shape7.svg'
 
 export default function Keywords() {
   return (
-    <Box mt={100}>
+    <Box
+      height="100vh"
+      position="relative"
+      width="100%"
+      sx={{ overflowX: 'hidden', display: 'flex', justifyContent: 'center' }}
+    >
       <Box
-        maxWidth={(theme) => theme.width.maxContent}
-        margin="0 auto"
+        width="120%"
+        maxWidth={'2000px'}
+        minWidth={{ xs: 800, sm: 1000 }}
+        // margin="0 auto"
         position="relative"
+        marginLeft={{ xs: -130, md: 0 }}
       >
         <Box
           sx={{
@@ -25,7 +32,7 @@ export default function Keywords() {
             mixBlendMode: 'overlay'
           }}
         >
-          <Shape style={{ overflow: 'visible' }} />
+          {/* <Shape style={{ overflow: 'visible' }} /> */}
         </Box>
         <img src={src} alt="" style={{ width: '100%' }} />
         <img

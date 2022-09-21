@@ -212,3 +212,90 @@ export const configEmitter = {
   detectRetina: true
 
 }
+
+export const configGradient= {
+  fpsLimit: 60,
+  fullScreen: false,
+  pauseOnOutsideViewport:true,
+  particles: {
+    // gradient: [
+    //   {
+    //     "type": "radial",
+    //     "colors": [
+    //       {
+    //         "stop": 0.25,
+    //         "value": "#5bc0eb"
+    //       },
+    //       {
+    //         "stop": 1,
+    //         "value": "#000000",
+    //         "opacity": 0
+    //       }
+    //     ]
+    //   }],
+    color: {
+      value: ["#BD10E0", "#B8E986", "#50E3C2", "#FFD300", "#E86363"]
+    },
+    move: {
+      direction: 'none' as any,
+      enable: true,
+      outModes: {
+        default: 'destroy'as any
+      },
+      random: true,
+      speed: 10,
+      straight: false,
+      noise: {
+        enable: true,
+        delay: {
+          value: 0.3
+        }
+      }
+    },
+    number: {
+      density: {
+        enable: true,
+        area: 100
+      },
+      limit: 5,
+      value: 5
+    },
+    opacity: {
+      value: 1,
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 0.8,
+        sync: false
+      }
+    },
+    shape: {
+    },
+    size: {
+      value: { min: 100, max: 500 },
+      anim: {
+        enable: true,
+        speed: 1,
+        opacity_min: 100,
+        sync: false
+      }
+    }
+  },
+  emitters: {
+    direction: "none",
+    position: {
+      x: 50,
+      y: 50
+    },
+    rate: {
+      delay: 1,
+      quantity: 1
+    },
+    size: {
+      width: 100,
+      height: 0
+    }
+  },
+  detectRetina: true
+
+}

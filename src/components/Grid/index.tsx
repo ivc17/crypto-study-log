@@ -1,18 +1,24 @@
 import { Box, Button, Typography } from '@mui/material'
 import { ReactComponent as GridSvg } from 'assets/grid.svg'
+import gridUrl from 'assets/grid.svg'
 import ColorSplitText from 'components/ColorSplitText'
 
 export default function Grid() {
   return (
     <Box
-      height="100vh"
+      height={'80vh'}
       width="100%"
       position="relative"
       display="flex"
       justifyContent={'center'}
       alignItems="center"
+      zIndex={4}
+      sx={{
+        background: `url(${gridUrl}) repeat 400px 0px`,
+        backgroundSize: '1000px'
+      }}
     >
-      <GridSvg style={{ position: 'absolute', top: 0, left: 0 }} />
+      {/* <GridSvg style={{ position: 'absolute', top: 0, left: 0 }} /> */}
       <Box display="grid" justifyItems="center" gap={90}>
         <ColorSplitText
           text="Read Me"

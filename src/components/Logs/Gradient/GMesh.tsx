@@ -27,7 +27,7 @@ export default function GMesh() {
           height: '100%',
           top: 0,
           width: '80%',
-          filter: 'blur(30px)',
+          // filter: 'blur(30px)',
           ml: '10%',
           zIndex: -1,
           transformOrigin: 'center top'

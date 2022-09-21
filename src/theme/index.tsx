@@ -97,7 +97,7 @@ export const themeColors = {
     main: '#31B047'
   },
   background: {
-    default: '#050505',
+    default: '#000000',
     paper: '#0013ff50',
     secondary: '#484D50'
   },
@@ -126,7 +126,7 @@ export const override: (palette: any) => any & {
       //   overflowX: 'hidden'
       // },
       body: {
-        backgroundColor: '#050505',
+        backgroundColor: '#000000',
         fontSize: 16,
         maxWidth: '100%',
         overflow: 'auto!important',

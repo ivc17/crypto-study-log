@@ -1,5 +1,6 @@
-import { Box, useTheme, Typography, styled } from '@mui/material'
+import { Box, Typography, styled } from '@mui/material'
 import { ReactComponent as Icon } from 'assets/icon.svg'
+import gradient from 'assets/gradient.png'
 
 const Light = styled('div')(({ theme }) => ({
   background: theme.gradient.gradient2,
@@ -67,6 +68,19 @@ export default function Footer() {
       <Box>
         <SidePanel>
           <Light></Light>
+          <img
+            src={gradient}
+            style={{
+              position: 'absolute',
+              bottom: 0,
+              left: 0,
+              width: '100%',
+              transform: 'rotate(180deg)',
+              zIndex: -1,
+              height: '200vh'
+            }}
+            alt=""
+          />
           ©2022 IVC17 Crypto Study Log. All rights reserved.
         </SidePanel>
       </Box>
