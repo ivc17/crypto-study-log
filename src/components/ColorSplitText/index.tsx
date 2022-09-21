@@ -24,7 +24,9 @@ const right = keyframes`
 100% {transform: translate(0,0);};
 `
 
-const Left = styled(Typography)<{ animated?: boolean }>(({ animated }) => ({
+const Left = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'animated'
+})<{ animated?: boolean }>(({ animated }) => ({
   animation: animated ? `${left} 5s ease-in-out infinite` : undefined,
   animationDirection: 'alternate',
   animationFillMode: 'forwards',
@@ -34,7 +36,9 @@ const Left = styled(Typography)<{ animated?: boolean }>(({ animated }) => ({
   left: -1
 }))
 
-const Right = styled(Typography)<{ animated?: boolean }>(({ animated }) => ({
+const Right = styled(Typography, {
+  shouldForwardProp: (prop) => prop !== 'animated'
+})<{ animated?: boolean }>(({ animated }) => ({
   animation: animated ? `${right} 5s ease-in-out infinite` : undefined,
   animationDirection: 'alternate',
   animationFillMode: 'forwards',

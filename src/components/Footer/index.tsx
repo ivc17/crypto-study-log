@@ -1,36 +1,41 @@
 import { Box, Typography, styled, keyframes } from '@mui/material'
 import { ReactComponent as Icon } from 'assets/icon.svg'
 import gradient from 'assets/gradient.png'
+import useBreakpoint from 'hooks/useBreakpoint'
 
 const appear = keyframes`
-0% {opacity: 0.6; transform:rotate(180deg); background-size:100% 100%;};
-50% {opacity: 0.8; transform:rotate(180deg); background-size:90% 130%;};
+0% {opacity: 0.6; transform:rotate(180deg); background-size:110% 100%;};
+50% {opacity: 0.8; transform:rotate(180deg); background-size:100% 130%;};
 100% {opacity: 1; transform:rotate(180deg); background-size:110% 100%;}
 `
 
-const StyledImg = styled('div')({
+const StyledImg = styled('div')(({ theme }) => ({
   transformOrigin: 'center center',
-  animation: `${appear} 10s ease-in-out infinite`,
+  animation: `${appear} 15s ease-in-out infinite`,
   animationDirection: 'alternate',
   animationFillMode: 'forwards',
   position: 'absolute',
-  bottom: 0,
+  bottom: theme.height.footer,
   left: 0,
   width: '100%',
   zIndex: -2,
   height: '150vh',
   background: `url(${gradient}) no-repeat`,
   backgroundSize: '100% 200%',
-  backgroundPosition: 'center center'
-})
+  backgroundPosition: 'center center',
+  [theme.breakpoints.down('sm')]: {
+    height: '200vh'
+  }
+}))
 
 const Light = styled('div')(({ theme }) => ({
   background: theme.gradient.gradient2,
-  position: 'absolute',
+  // position: 'absolute',
   bottom: '100%',
   left: 0,
   width: '100%',
-  height: 600
+  height: 500,
+  zIndex: 10
 }))
 
 const TopPanel = styled('div')(({ theme }) => ({
@@ -42,7 +47,10 @@ const TopPanel = styled('div')(({ theme }) => ({
   [theme.breakpoints.down('md')]: {
     height: 200,
     transform: 'perspective(200px) rotateX(40deg)'
-  }
+  },
+  position: 'absolute',
+  bottom: theme.height.footer,
+  zIndex: 10
 }))
 
 const SidePanel = styled('footer')(({ theme }) => ({
@@ -54,44 +62,75 @@ const SidePanel = styled('footer')(({ theme }) => ({
   justifyContent: 'center',
   overflow: 'visible',
   position: 'relative',
-  zIndex: 4
+  zIndex: 4,
+  textAlign: 'center',
+  fontSize: 14
 }))
 
 export default function Footer() {
+  const isDownSm = useBreakpoint('sm')
   return (
-    <Box zIndex={2} position="relative">
+    <Box zIndex={1} position="relative">
       <Box
-        zIndex={4}
+        zIndex={12}
         position="absolute"
         maxWidth={(theme) => theme.width.maxContent}
-        padding="0 60px"
+        padding={{ xs: '0 20px', md: '0 60px' }}
         width="80%"
         display="grid"
         left="50%"
-        sx={{ transform: 'translateX(-50%)' }}
-        gap={40}
-        bottom={200}
+        gap={{ xs: 10, md: 40 }}
+        bottom={120}
+        sx={{
+          transform: 'translateX(-50%)'
+        }}
       >
-        <Typography fontSize={28} fontWeight={700}>
-          IVC17
-        </Typography>
-        <Box display={'flex'} width="100%" justifyContent={'space-between'}>
-          {' '}
-          <Typography fontSize={20}>about</Typography>
-          <Typography fontSize={20}>contact</Typography>
-          <Typography fontSize={20}>work</Typography>
+        <Box width="100%">
+          <Typography fontSize={28} fontWeight={700} mb={30}>
+            IVC17
+          </Typography>
+
+          <Box
+            display={'grid'}
+            width="100%"
+            gridTemplateColumns={{ xs: '1fr', md: '1fr 1fr 1fr' }}
+            justifyItems={{ xs: 'flex-end', md: 'center' }}
+            sx={{ '& p': { fontSize: { xs: 16, md: 20 } } }}
+            gap={{ xs: 5, md: 20 }}
+          >
+            <Typography>About developer</Typography>
+            <Typography>Contact</Typography>
+            <Typography>Other Works</Typography>
+            <Typography mt={20} mb={20}></Typography>
+            <Typography mt={20} mb={20}>
+              Back to top
+            </Typography>
+            <Typography mt={20} mb={20}></Typography>
+            <Typography>All logs</Typography>
+            <Typography>Keywords</Typography>
+            <Typography>About Project</Typography>
+          </Box>
         </Box>
 
-        <Box mt={30}>
+        <Box
+          mt={30}
+          ml="auto"
+          sx={{
+            display: 'flex',
+            '& *': {
+              height: { xs: 20, md: 30 }
+            }
+          }}
+        >
           <Icon /> <Icon /> <Icon /> <Icon /> <Icon /> <Icon />
         </Box>
       </Box>
       <TopPanel></TopPanel>
       <Box>
+        <Light></Light>
         <SidePanel>
-          <Light></Light>
           <StyledImg />
-          ©2022 IVC17 Crypto Study Log. All rights reserved.
+          ©2022 IVC17 Crypto Study Log.{!isDownSm && 'All rights reserved.'}
         </SidePanel>
       </Box>
     </Box>

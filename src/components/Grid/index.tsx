@@ -19,20 +19,24 @@ export default function Grid() {
       }}
     >
       {/* <GridSvg style={{ position: 'absolute', top: 0, left: 0 }} /> */}
-      <Box display="grid" justifyItems="center" gap={90}>
+      <Box display="grid" justifyItems="center" gap={{ xs: 30, md: 90 }}>
         <ColorSplitText
-          text="Read Me"
-          fontSize="60px"
+          text="About Project"
+          fontSize={{ xs: 40, md: 50 }}
           fontWeight={700}
         ></ColorSplitText>
 
-        <Typography width={'250px'}>
-          世界レベルの 技術者を中心とした実績＆経験豊富なエンジニア集団です。
-          全ての工程を日本語でコミュニケーションできる人材が時差の殆どない台湾で
-          ラボ型/ウォーターフォール開発/アジャイル開発 等 柔軟な開発しています。
-          日本語でのウェブシステム開発をオフショアでご希望でしたら、ぜひご検討ください。
+        <Typography width={'250px'} textAlign="center">
+          This is an experimental project that aims to test out the possibility
+          of svg animation, as well as to what extent css mix-blend-mode is able
+          to replicate layer effect in photoshop/illustrator. This is also a
+          place to document my journey navigating the web3 world. Update
+          irregurarly. The moset difficult part of making the project is taking
+          performance into account, have to cut down on my ideas because of it.
         </Typography>
-        <Button>sduhsod</Button>
+        <Button sx={{ background: '#ffffff', color: '#000000' }}>
+          sduhsod
+        </Button>
       </Box>
     </Box>
   )

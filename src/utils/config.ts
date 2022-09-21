@@ -137,7 +137,8 @@ export const configEmitter = {
       direction:'bottom' as any,
       enable: true,
       outModes: {
-        default: 'bounce'as any
+        default: "destroy" as any,
+        bottom: "destroy" as any
       },
       random: true,
       speed: 3,
@@ -204,7 +205,7 @@ export const configEmitter = {
       size: {
         value: 100,
       }
-    }
+    },
   ],
   detectRetina: true
 

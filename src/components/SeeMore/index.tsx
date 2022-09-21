@@ -1,44 +1,99 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Typography, useTheme } from '@mui/material'
 import ColorSplitText from 'components/ColorSplitText'
 import React from 'react'
 
 export default function SeeMore() {
+  const theme = useTheme()
   return (
     <Box
       height="100vh"
+      maxHeight={1200}
       width="100%"
       position="relative"
       display="flex"
       justifyContent={'center'}
-      alignItems="center"
+      alignItems={{ xs: 'unset', md: 'center' }}
       zIndex={4}
+      overflow="hidden"
+      margin={{ xs: '100px 0 200px', md: ' 100px 0 300px' }}
     >
-      <Box display="grid" justifyItems="center" gap={90}>
-        <ColorSplitText
-          text="Checkout more"
-          fontSize={{ xs: '24px', md: '60px' }}
-          fontWeight={700}
-        ></ColorSplitText>
-        <LightStrip />
-        <LightStrip style={{ width: '50%' }} />
-        <LightStrip style={{ width: '50%' }} />
-        <LightStrip color="purple" style={{ top: 200 }} orientation="v" />
-        <LightStrip
-          orientation="v"
-          style={{ top: 200, right: 200, left: 'unset' }}
-        />
-        <LightStrip
-          style={{ bottom: 200, right: 200, left: 'unset', top: 'unset' }}
-        />
-        <Box></Box>
+      <Box
+        display="grid"
+        justifyItems="center"
+        gap={90}
+        width="100%"
+        maxWidth={theme.width.maxContent}
+      >
+        <Box
+          width="80%"
+          position="relative"
+          overflow="hidden"
+          sx={{
+            position: 'relative',
+            minHeight: 800,
 
-        <Typography width={'250px'}>
-          世界レベルの 技術者を中心とした実績＆経験豊富なエンジニア集団です。
-          全ての工程を日本語でコミュニケーションできる人材が時差の殆どない台湾で
-          ラボ型/ウォーターフォール開発/アジャイル開発 等 柔軟な開発しています。
-          日本語でのウェブシステム開発をオフショアでご希望でしたら、ぜひご検討ください。
-        </Typography>
-        <Button>sduhsod</Button>
+            minWidth: 350
+          }}
+        >
+          <Box
+            sx={{
+              paddingTop: '100%',
+              display: 'block',
+              position: 'relative',
+              height: '100%'
+            }}
+          >
+            <Box
+              position="absolute"
+              top="50%"
+              left="50%"
+              sx={{
+                transform: 'translate(-50%,-60%)',
+                display: 'grid',
+                justifyItems: 'center'
+              }}
+              gap={{ xs: 30, md: 90 }}
+            >
+              <ColorSplitText
+                text="More work"
+                fontSize={{ xs: 40, md: 50 }}
+                fontWeight={700}
+              ></ColorSplitText>
+              <Typography width={'100%'} maxWidth={250}>
+                Checkout my other work here.
+                <br /> I am always looking for next exciting project, drop me a
+                message here if you’ have any cool ideas that wants to be
+                carried out.
+              </Typography>
+              <Button>sduhsod</Button>
+            </Box>
+          </Box>
+          <Box
+            id="lightStrip"
+            position="absolute"
+            left={'50%'}
+            top={0}
+            sx={{ transform: 'translateX(-50%)' }}
+            height="100%"
+            width="100%"
+          >
+            <LightStrip style={{ top: 50, left: 0 }} />
+            <LightStrip
+              color="purple"
+              style={{ top: 0, left: 50 }}
+              orientation="v"
+              left
+            />
+            <LightStrip
+              orientation="v"
+              style={{ bottom: -50, right: 50, left: 'unset', top: 'unset' }}
+            />
+            <LightStrip
+              bottom
+              style={{ bottom: 100, right: 0, left: 'unset', top: 'unset' }}
+            />
+          </Box>
+        </Box>
       </Box>
     </Box>
   )
@@ -47,22 +102,30 @@ export default function SeeMore() {
 function LightStrip({
   color,
   style,
-  orientation = 'h'
+  orientation = 'h',
+  bottom,
+  left
 }: {
   color?: string
   style?: React.CSSProperties
   orientation?: 'h' | 'v'
+  bottom?: boolean
+  left?: boolean
 }) {
   return (
     <Box
-      width={orientation === 'h' ? '90vw' : '500px'}
+      width={orientation === 'h' ? '80%' : '300px'}
       maxWidth={(theme) => theme.width.maxContent}
-      height={orientation === 'h' ? '500px' : '100%'}
+      height={orientation === 'h' ? '300px' : '80%'}
       sx={{
         position: 'absolute',
         top: 0,
         left: 0,
         borderRadius: '50%',
+        transformOrigin:
+          orientation === 'h'
+            ? `center ${bottom ? 'bottom' : 'top'}`
+            : `${left ? 'left' : 'right'} center`,
         transform: orientation === 'h' ? 'scale(1,0.05)' : 'scale(0.05,1)',
         background:
           color === 'purple'

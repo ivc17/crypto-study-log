@@ -30,7 +30,7 @@ export default function Particles() {
 
   const isDownLg = useBreakpoint('lg')
   const isDownMd = useBreakpoint('md')
-  const isDownSm = useBreakpoint('sm')
+  // const isDownSm = useBreakpoint('sm')
 
   const changeHandler = useCallback(
     (container: Container | undefined) => {
@@ -74,7 +74,7 @@ export default function Particles() {
     // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
-    console.log(engine)
+    // console.log(engine)
     await loadFull(engine)
   }, [])
 

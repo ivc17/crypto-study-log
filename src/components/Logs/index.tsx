@@ -12,16 +12,39 @@ import useBreakpoint from 'hooks/useBreakpoint'
 import VerticalCarousel from 'components/VerticalCarousel/VerticalCarousel'
 import ColorSplitText from 'components/ColorSplitText'
 
+// const appear = keyframes`
+// 0% {opacity: 0.6; };
+// 50% {opacity: 1; };
+// 100% {opacity: 0.8;}
+// `
+
+// const StyledImg = styled('div')({
+//   transform: 'translate(-50%, 0)',
+//   // transformOrigin: 'center top',
+//   animation: `${appear} 20s ease-in-out infinite`,
+//   animationDirection: 'alternate',
+//   animationFillMode: 'forwards',
+//   maxWidth: '1440px',
+//   position: 'absolute',
+//   left: '50%',
+//   width: '100%',
+//   zIndex: -2,
+//   height: '200vh',
+//   backgroundSize: '100% 100%',
+//   backgroundPosition: 'center center',
+//   background: `url(${gradient})  no-repeat`
+// })
+
 const appear = keyframes`
-0% {opacity: 0.6; transform: translate(-50%, -30px) scale(1,1.6); };
-50% {opacity: 1; transform: translate(-50%, 0px) scale(0.8,1.3); };
-100% {opacity: 0.8; transform: translate(-50%, 30) scale(1,1);}
+0% {opacity: 0.6; transform: translate(-50%, -30px) scale(1,1.8); };
+50% {opacity: 1; transform: translate(-50%, 0px) scale(0.8,1.6); };
+100% {opacity: 0.8; transform: translate(-50%, 30) scale(1,1.4);}
 `
 
 const StyledImg = styled('img')({
   transform: 'translate(-50%, 0)',
   transformOrigin: 'center top',
-  animation: `${appear} 8s ease-in-out infinite`,
+  animation: `${appear} 20s ease-in-out infinite`,
   animationDirection: 'alternate',
   animationFillMode: 'forwards',
   opacity: 0,
@@ -135,11 +158,12 @@ export default function Logs() {
             <Light />
             <Box position={'absolute'} top={'100%'}>
               <ColorSplitText
-                text={'Logs'}
+                text={'Study Logs'}
                 fontWeight={700}
-                fontSize={{ xs: 40, lg: 40 }}
+                fontSize={{ xs: 40, md: 50 }}
                 zIndex={10}
               ></ColorSplitText>
+              <ColorSplitText text="スタディ・ログ" fontWeight={700} />
             </Box>
           </SidePanel>
           <StyledImg src={gradient} alt=""></StyledImg>

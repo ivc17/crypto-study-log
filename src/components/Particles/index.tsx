@@ -11,9 +11,9 @@ const appear = keyframes`
 100% {opacity: 1}
 `
 
-const Wrapper = styled(Box)({
+const Wrapper = styled(Box)(({ theme }) => ({
   width: '100%',
-  bottom: 0,
+  bottom: theme.height.footer,
   // top: 'calc(100% - 500px)',
   left: 0,
   height: 'calc(100% - 100vh)',
@@ -26,7 +26,7 @@ const Wrapper = styled(Box)({
   pointerEvents: 'none',
   zIndex: 3,
   '&>div': { width: '100%', height: '100%' }
-})
+}))
 
 export default function Particles() {
   const [tsPContainer, setTsPContainer] = useState<Container | undefined>(
@@ -45,11 +45,11 @@ export default function Particles() {
       if (isDownLg) {
         if (isDownMd) {
           if (isDownSm) {
-            tsPContainer.options.particles.number.value = 5
+            tsPContainer.options.particles.number.value = 10
           }
-          tsPContainer.options.particles.size.value = { min: 1, max: 5 }
+          tsPContainer.options.particles.size.value = { min: 1, max: 3 }
         } else {
-          tsPContainer.options.particles.number.value = 10
+          tsPContainer.options.particles.number.value = 15
         }
         tsPContainer.options.particles.size.value = { min: 5, max: 20 }
       } else {

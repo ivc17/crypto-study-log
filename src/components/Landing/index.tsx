@@ -67,7 +67,7 @@ export default function Landing() {
                 ? isDownLg
                   ? isDownMd
                     ? isDownSm
-                      ? 150
+                      ? 130
                       : 200
                     : 250
                   : 300
@@ -88,7 +88,7 @@ export default function Landing() {
                 ? isDownLg
                   ? isDownMd
                     ? isDownSm
-                      ? 130
+                      ? 100
                       : 150
                     : 180
                   : 200
@@ -96,14 +96,14 @@ export default function Landing() {
             }
           />{' '}
         </Box>
-        <Box position="absolute" bottom={'10%'} left={isDownMd ? '35%' : '45%'}>
+        <Box position="absolute" bottom={'8%'} left={isDownMd ? '35%' : '45%'}>
           <BlockStack
             width={
               isDownXl
                 ? isDownLg
                   ? isDownMd
                     ? isDownSm
-                      ? 200
+                      ? 180
                       : 250
                     : 300
                   : 350

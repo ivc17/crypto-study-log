@@ -49,7 +49,7 @@ export default function Header() {
           sx={{ background: (theme) => theme.palette.primary.main }}
           padding={{ xs: '0 10px', md: '0 15px' }}
         >
-          <LogoIcon />
+          <LogoIcon style={{ zIndex: 10 }} />
         </Box>
       </StyledNav>
     </>

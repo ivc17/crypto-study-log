@@ -18,12 +18,14 @@ function App() {
       <Header />
       <Landing />
       <Particles />
-      <Box zIndex={4}>
-        <Logs />
+      <Box height="max-content" overflow="hidden" maxWidth={'100%'}>
+        <Box zIndex={4}>
+          <Logs />
+        </Box>
+        <Grid />
+        <SeeMore />
+        <Footer />
       </Box>
-      <Grid />
-      <SeeMore />
-      <Footer />
     </Box>
   )
 }

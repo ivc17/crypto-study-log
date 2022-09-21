@@ -162,15 +162,17 @@ export const override: (palette: any) => any & {
         fontWeight: 500
       },
       contained: {
-        color: palette.primary.contrastText,
+        color: '#000000',
+        background: '#ffffff',
         boxShadow: 'unset',
+        padding: '0 40px',
         '&:hover': {
           boxShadow: 'unset',
-          background: themeConstants.gradient.gradient2
+          background: `#ffffff ${themeConstants.gradient.gradient2}`
         },
         '&:active': {
           boxShadow: 'unset',
-          background: themeConstants.gradient.gradient3
+          background: `#ffffff themeConstants.gradient.gradient3}`
         },
         '&:disabled': {
           boxShadow: 'unset',
