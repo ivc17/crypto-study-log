@@ -44,12 +44,14 @@ export default function Landing() {
             fontWeight={900}
             zIndex={30}
             text={<>Crypto Study Log</>}
+            animated
           />
           <ColorSplitText
             fontSize={isDownMd ? 20 : 50}
             fontWeight={900}
             zIndex={30}
             text={<>Notes for crypto related stuff</>}
+            animated
           />
         </Box>
         <Box

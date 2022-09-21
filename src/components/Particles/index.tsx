@@ -13,7 +13,10 @@ const appear = keyframes`
 
 const Wrapper = styled(Box)({
   width: '100%',
-  height: '100vh',
+  bottom: 0,
+  // top: 'calc(100% - 500px)',
+  left: 0,
+  height: 'calc(100% - 100vh)',
   maxWidth: '100%',
   position: 'absolute',
   animation: `${appear} 10s`,
@@ -95,7 +98,7 @@ export default function Particles() {
   }, [tsPContainer, isDownMd, isDownLg])
 
   return (
-    <Wrapper>
+    <Wrapper id="emitterWrapper">
       <TsParticles
         id="tsparticlesEmitter"
         init={particlesInit}

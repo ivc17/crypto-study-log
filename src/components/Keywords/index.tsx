@@ -6,7 +6,7 @@ import { ReactComponent as KeywordsLight } from 'assets/keywords.svg'
 export default function Keywords() {
   return (
     <Box
-      height="100vh"
+      margin={{ xs: 0, md: '80px 0' }}
       position="relative"
       width="100%"
       sx={{ overflowX: 'hidden', display: 'flex', justifyContent: 'center' }}

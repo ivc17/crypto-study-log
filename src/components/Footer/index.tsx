@@ -1,6 +1,28 @@
-import { Box, Typography, styled } from '@mui/material'
+import { Box, Typography, styled, keyframes } from '@mui/material'
 import { ReactComponent as Icon } from 'assets/icon.svg'
 import gradient from 'assets/gradient.png'
+
+const appear = keyframes`
+0% {opacity: 0.6; transform:rotate(180deg); background-size:100% 100%;};
+50% {opacity: 0.8; transform:rotate(180deg); background-size:90% 130%;};
+100% {opacity: 1; transform:rotate(180deg); background-size:110% 100%;}
+`
+
+const StyledImg = styled('div')({
+  transformOrigin: 'center center',
+  animation: `${appear} 10s ease-in-out infinite`,
+  animationDirection: 'alternate',
+  animationFillMode: 'forwards',
+  position: 'absolute',
+  bottom: 0,
+  left: 0,
+  width: '100%',
+  zIndex: -2,
+  height: '150vh',
+  background: `url(${gradient}) no-repeat`,
+  backgroundSize: '100% 200%',
+  backgroundPosition: 'center center'
+})
 
 const Light = styled('div')(({ theme }) => ({
   background: theme.gradient.gradient2,
@@ -32,7 +54,7 @@ const SidePanel = styled('footer')(({ theme }) => ({
   justifyContent: 'center',
   overflow: 'visible',
   position: 'relative',
-  zIndex: 2
+  zIndex: 4
 }))
 
 export default function Footer() {
@@ -68,19 +90,7 @@ export default function Footer() {
       <Box>
         <SidePanel>
           <Light></Light>
-          <img
-            src={gradient}
-            style={{
-              position: 'absolute',
-              bottom: 0,
-              left: 0,
-              width: '100%',
-              transform: 'rotate(180deg)',
-              zIndex: -1,
-              height: '200vh'
-            }}
-            alt=""
-          />
+          <StyledImg />
           ©2022 IVC17 Crypto Study Log. All rights reserved.
         </SidePanel>
       </Box>

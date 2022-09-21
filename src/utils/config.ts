@@ -1,5 +1,5 @@
 import cube from 'assets/cube.svg'
-// import { MoveDirection, OutMode } from "tsparticles-engine";
+import { MoveDirection, OutMode } from "tsparticles-engine";
 
 export const particleConfig = {
   fpsLimit: 100,
@@ -133,7 +133,8 @@ export const configEmitter = {
       value: '#ffffff'
     },
     move: {
-      direction: 'none' as any,
+      // direction: MoveDirection.top,
+      direction:'bottom' as any,
       enable: true,
       outModes: {
         default: 'bounce'as any
@@ -149,10 +150,6 @@ export const configEmitter = {
       }
     },
     number: {
-      density: {
-        enable: false,
-        area: 2000
-      },
       limit: 0,
       value: 5
     },
@@ -186,13 +183,13 @@ export const configEmitter = {
 
   emitters: [
     {
-        direction: 'top' as any,
+        direction: 'bottom' as any,
         position: {
           y:5,
         },
         life: {
             duration: 1,
-            delay: 8,
+            delay: 6,
             count: 0,
       },
       rendom: {

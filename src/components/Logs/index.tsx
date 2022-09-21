@@ -1,10 +1,9 @@
-import { Box, styled, useTheme } from '@mui/material'
+import { Box, keyframes, styled, useTheme } from '@mui/material'
 import Carousel from 'react-spring-3d-carousel'
 import { v4 as uuidv4 } from 'uuid'
 import { config } from 'react-spring'
 import { useState } from 'react'
 import Card from './Card'
-import Particles from './Particle'
 import Keywords from 'components/Keywords'
 // import GradientCanvas from './GradientCanvas'
 // import GMesh from './GMesh'
@@ -12,6 +11,27 @@ import gradient from 'assets/gradient.png'
 import useBreakpoint from 'hooks/useBreakpoint'
 import VerticalCarousel from 'components/VerticalCarousel/VerticalCarousel'
 import ColorSplitText from 'components/ColorSplitText'
+
+const appear = keyframes`
+0% {opacity: 0.6; transform: translate(-50%, -30px) scale(1,1.6); };
+50% {opacity: 1; transform: translate(-50%, 0px) scale(0.8,1.3); };
+100% {opacity: 0.8; transform: translate(-50%, 30) scale(1,1);}
+`
+
+const StyledImg = styled('img')({
+  transform: 'translate(-50%, 0)',
+  transformOrigin: 'center top',
+  animation: `${appear} 8s ease-in-out infinite`,
+  animationDirection: 'alternate',
+  animationFillMode: 'forwards',
+  opacity: 0,
+  maxWidth: '1440px',
+  position: 'absolute',
+  left: '50%',
+  width: '100%',
+  zIndex: -2,
+  height: '200vh'
+})
 
 const Light = styled('div')(({ theme }) => ({
   background: theme.gradient.gradient1,
@@ -122,23 +142,8 @@ export default function Logs() {
               ></ColorSplitText>
             </Box>
           </SidePanel>
-          <img
-            src={gradient}
-            alt=""
-            style={{
-              maxWidth: '1440px',
-              position: 'absolute',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '100%',
-              zIndex: -2,
-              height: '200vh'
-              // mixBlendMode: 'hard-light'
-              // filter: 'blur(5px)'
-            }}
-          ></img>
+          <StyledImg src={gradient} alt=""></StyledImg>
         </Box>
-        <Particles />
         <BottomPanel />
 
         {isDownSm ? (

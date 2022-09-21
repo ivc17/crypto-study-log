@@ -1,8 +1,10 @@
 import { Box } from '@mui/material'
-import { useRef } from 'react'
+import { useEffect, useRef } from 'react'
 
 export default function Field2() {
-  const canvas = useRef < HTMLCanvasElement > null
+  const canvas = useRef<HTMLCanvasElement>(null)
+
+  useEffect(() => {}, [])
 
   return (
     <Box height="100vh" minHeight={'500px'} width="100%">
