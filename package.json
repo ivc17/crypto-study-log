@@ -2,6 +2,7 @@
   "name": "crypto-log",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://ivc17.github.io/crypto-study-log",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
