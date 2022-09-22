@@ -1,4 +1,4 @@
-import { Link, SxProps, Theme, Typography } from '@mui/material'
+import { Link, SxProps, Theme } from '@mui/material'
 import { HTMLProps, useCallback } from 'react'
 
 export default function ExternalLink({
