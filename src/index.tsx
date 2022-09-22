@@ -10,7 +10,7 @@ const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement)
 root.render(
   <React.StrictMode>
     <ThemeProvider>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename={'/crypto-study-log'}>
         <App />
       </BrowserRouter>
     </ThemeProvider>
