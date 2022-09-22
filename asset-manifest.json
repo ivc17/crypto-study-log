@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/static/css/main.e6c13ad2.css",
-    "main.js": "/static/js/main.d6025deb.js",
-    "static/js/787.2a76f318.chunk.js": "/static/js/787.2a76f318.chunk.js",
-    "static/media/gradient.png": "/static/media/gradient.d5c045ed225f32fa8ecb.png",
-    "static/media/keywordBg.png": "/static/media/keywordBg.810f9c4cc19714cac3e4.png",
-    "static/media/keywordsLight2.png": "/static/media/keywordsLight2.ee2d9182aa54c38ce607.png",
-    "static/media/cube.svg": "/static/media/cube.63e3eef5d1d8a4723d6c273098277065.svg",
-    "static/media/keywords.svg": "/static/media/keywords.1e47516cde5ce95a054ce66d5955a787.svg",
-    "static/media/grid.svg": "/static/media/grid.60c04c1893e426a1a0b68de307e9ec8e.svg",
-    "static/media/keywordsBalls.svg": "/static/media/keywordsBalls.57e07978acfd16367e3435706502018a.svg",
-    "static/media/ball.svg": "/static/media/ball.c7083eda2d0cea22a30b36dfff90e4fd.svg",
-    "static/media/icon.svg": "/static/media/icon.df36b393c5aec177ad5d92e5cf9a15e0.svg",
-    "index.html": "/index.html",
-    "main.e6c13ad2.css.map": "/static/css/main.e6c13ad2.css.map",
-    "main.d6025deb.js.map": "/static/js/main.d6025deb.js.map",
-    "787.2a76f318.chunk.js.map": "/static/js/787.2a76f318.chunk.js.map"
+    "main.css": "/crypto-study-log/static/css/main.e6c13ad2.css",
+    "main.js": "/crypto-study-log/static/js/main.12930434.js",
+    "static/js/787.2a76f318.chunk.js": "/crypto-study-log/static/js/787.2a76f318.chunk.js",
+    "static/media/gradient.png": "/crypto-study-log/static/media/gradient.d5c045ed225f32fa8ecb.png",
+    "static/media/keywordBg.png": "/crypto-study-log/static/media/keywordBg.810f9c4cc19714cac3e4.png",
+    "static/media/keywordsLight2.png": "/crypto-study-log/static/media/keywordsLight2.ee2d9182aa54c38ce607.png",
+    "static/media/cube.svg": "/crypto-study-log/static/media/cube.63e3eef5d1d8a4723d6c273098277065.svg",
+    "static/media/keywords.svg": "/crypto-study-log/static/media/keywords.1e47516cde5ce95a054ce66d5955a787.svg",
+    "static/media/grid.svg": "/crypto-study-log/static/media/grid.60c04c1893e426a1a0b68de307e9ec8e.svg",
+    "static/media/keywordsBalls.svg": "/crypto-study-log/static/media/keywordsBalls.57e07978acfd16367e3435706502018a.svg",
+    "static/media/ball.svg": "/crypto-study-log/static/media/ball.c7083eda2d0cea22a30b36dfff90e4fd.svg",
+    "static/media/icon.svg": "/crypto-study-log/static/media/icon.df36b393c5aec177ad5d92e5cf9a15e0.svg",
+    "index.html": "/crypto-study-log/index.html",
+    "main.e6c13ad2.css.map": "/crypto-study-log/static/css/main.e6c13ad2.css.map",
+    "main.12930434.js.map": "/crypto-study-log/static/js/main.12930434.js.map",
+    "787.2a76f318.chunk.js.map": "/crypto-study-log/static/js/787.2a76f318.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.d6025deb.js"
+    "static/js/main.12930434.js"
   ]
 }
