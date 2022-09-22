@@ -1,5 +1,6 @@
 import { Box, Button, Typography, useTheme } from '@mui/material'
 import ColorSplitText from 'components/ColorSplitText'
+import ExternalLink from 'components/ExternalLink'
 import useBreakpoint from 'hooks/useBreakpoint'
 import React from 'react'
 
@@ -67,12 +68,27 @@ export default function SeeMore() {
                 <ColorSplitText text="もっと" fontWeight={700}></ColorSplitText>
               </Box>
               <Typography width={'100%'} maxWidth={250}>
-                Checkout my other work here.
-                <br /> I am always looking for next exciting project, drop me a
-                message here if you’ have any cool ideas that wants to be
-                carried out.
+                Feel free to chekcout out more of my projects if you're
+                interested by clicking 'More Projects'.
+                <br /> <br />I am always looking for next exciting project, drop
+                me a message{' '}
+                <ExternalLink
+                  underline="always"
+                  href={'https://ivc17.github.io/contact'}
+                  sx={{
+                    display: 'inline',
+                    fontSize: { xs: 16, md: 20 },
+                    textDecoration: 'underline'
+                  }}
+                >
+                  here
+                </ExternalLink>{' '}
+                if you’ have any cool ideas that wants to be carried out.
               </Typography>
-              <Button>More Projects</Button>
+
+              <ExternalLink href={'https://ivc17.github.io/gallery'}>
+                <Button> More Projects </Button>
+              </ExternalLink>
             </Box>
           </Box>
           <Box

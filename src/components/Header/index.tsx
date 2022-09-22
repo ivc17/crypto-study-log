@@ -1,4 +1,7 @@
-import { Box, styled, SvgIconProps } from '@mui/material'
+import { Box, styled, SvgIconProps, useTheme } from '@mui/material'
+import { routes } from 'constant/routes'
+import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 const StyledNav = styled('nav')(({ theme }) => ({
   height: theme.height.header,
@@ -37,6 +40,19 @@ export const LogoIcon = (props: SvgIconProps) => {
 }
 
 export default function Header() {
+  const theme = useTheme()
+  const navigate = useNavigate()
+
+  const scrollToHandle = useCallback(() => {
+    const element = document.getElementById('landing')
+    if (element) {
+      navigate(routes.home)
+      window.scrollTo({
+        behavior: 'smooth',
+        top: element.getBoundingClientRect().top + window.scrollY
+      })
+    }
+  }, [navigate])
   return (
     <>
       <StyledNav>
@@ -47,10 +63,21 @@ export default function Header() {
           }}
           height="100%"
           width="max-content"
-          sx={{ background: (theme) => theme.palette.primary.main }}
+          sx={{
+            background: theme.palette.primary.main,
+            cursor: 'pointer',
+            '&:hover': {
+              boxShadow: `0 0 10px 10px ${theme.palette.primary.main}`
+            }
+          }}
           padding={{ xs: '0 10px', md: '0 15px' }}
+          onClick={scrollToHandle}
         >
-          <LogoIcon style={{ zIndex: 10 }} />
+          <LogoIcon
+            style={{
+              zIndex: 10
+            }}
+          />
         </Box>
       </StyledNav>
     </>

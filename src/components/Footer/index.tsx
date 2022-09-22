@@ -5,6 +5,7 @@ import useBreakpoint from 'hooks/useBreakpoint'
 import { useCallback } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { routes } from 'constant/routes'
+import ExternalLink from 'components/ExternalLink'
 
 const appear = keyframes`
 0% {opacity: 0.6; transform:rotate(180deg); background-size:110% 100%;};
@@ -115,7 +116,7 @@ export default function Footer() {
             gridTemplateColumns={{ xs: '1fr', md: '1fr 1fr 1fr' }}
             justifyItems={{ xs: 'flex-end', md: 'center' }}
             sx={{
-              '& p': {
+              '& p, a': {
                 fontSize: { xs: 16, md: 20 },
                 cursor: 'pointer',
                 '&:hover, :active': {
@@ -125,9 +126,15 @@ export default function Footer() {
             }}
             gap={{ xs: 5, md: 20 }}
           >
-            <Typography>About developer</Typography>
-            <Typography>Contact</Typography>
-            <Typography>Other Works</Typography>
+            <ExternalLink href={'https://ivc17.github.io/about'}>
+              About developer
+            </ExternalLink>
+            <ExternalLink href={'https://ivc17.github.io/contact'}>
+              Contact
+            </ExternalLink>
+            <ExternalLink href={'https://ivc17.github.io/gallery'}>
+              Other Works
+            </ExternalLink>
             <Typography mt={20} mb={20}></Typography>
             <Typography
               mt={20}
