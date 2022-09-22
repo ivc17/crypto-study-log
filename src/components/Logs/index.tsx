@@ -3,7 +3,7 @@ import Carousel from 'react-spring-3d-carousel'
 import { v4 as uuidv4 } from 'uuid'
 import { config } from 'react-spring'
 import { useState } from 'react'
-import Card from './Card'
+import Card from '../Card'
 import Keywords from 'components/Keywords'
 // import GradientCanvas from './GradientCanvas'
 // import GMesh from './GMesh'
@@ -122,7 +122,7 @@ export default function Logs() {
 
   return (
     <>
-      <Box position="relative" zIndex={1}>
+      <Box position="relative" zIndex={1} id="logs">
         <Box
           sx={{
             '& *': { pointerEvents: 'none' },

@@ -67,7 +67,7 @@ export default function Particles() {
         tsPContainer.options.particles.size.value = { min: 5, max: 20 }
       }
     },
-    [isDownLg]
+    [isDownLg, isDownMd]
   )
 
   const particlesInit = useCallback(async (engine: Engine) => {

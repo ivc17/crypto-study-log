@@ -1,4 +1,4 @@
-import { Box, Typography, useTheme } from '@mui/material'
+import { Box, useTheme } from '@mui/material'
 import { BlockStack } from 'components/Block'
 import ColorSplitText from 'components/ColorSplitText'
 import useBreakpoint from 'hooks/useBreakpoint'

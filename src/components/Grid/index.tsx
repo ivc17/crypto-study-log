@@ -6,6 +6,7 @@ import ColorSplitText from 'components/ColorSplitText'
 export default function Grid() {
   return (
     <Box
+      id="about"
       height={'80vh'}
       width="100%"
       position="relative"

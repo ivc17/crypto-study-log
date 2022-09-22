@@ -1,6 +1,7 @@
 import { Box, Button, Typography } from '@mui/material'
 import Modal from 'components/Modal'
 import { NOTES } from 'constant/notes'
+import { routes } from 'constant/routes'
 import { Suspense, useEffect, useMemo, useState } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { remark } from 'remark'
@@ -40,12 +41,25 @@ export default function SingleLog({ title }: { title?: string }) {
 
   return (
     <Modal isOpen={true} onDismiss={() => {}}>
-      <Box sx={{ background: (theme) => theme.palette.primary.dark + '90' }}>
-        <Box mb={50} display="flex" justifyContent="space-between">
+      <Box
+        sx={{
+          background: (theme) => theme.palette.primary.dark + '90',
+          height: '100%',
+          overflow: 'auto'
+        }}
+      >
+        <Box
+          mb={50}
+          display="flex"
+          justifyContent="space-between"
+          position={'absolute'}
+          top={0}
+          right={0}
+        >
           <div />
           <Button
             onClick={() => {
-              navigate(location.state)
+              navigate(location.state ?? routes.home)
             }}
           >
             Close
@@ -53,10 +67,15 @@ export default function SingleLog({ title }: { title?: string }) {
         </Box>
         <Box
           padding={'24px'}
-          height="100%"
+          height="max-content"
           overflow="auto"
           maxWidth={(theme) => theme.width.maxContent}
-          margin="0 auto"
+          margin="80px auto 0"
+          sx={{
+            '& a': {
+              color: '#ffffff!important'
+            }
+          }}
         >
           <Typography>{note?.date}</Typography>
           <Typography fontSize={40} fontWeight={700} mb={50}>

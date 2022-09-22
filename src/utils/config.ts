@@ -1,5 +1,5 @@
 import cube from 'assets/cube.svg'
-import { MoveDirection, OutMode } from "tsparticles-engine";
+// import { MoveDirection, OutMode } from "tsparticles-engine";
 
 export const particleConfig = {
   fpsLimit: 100,

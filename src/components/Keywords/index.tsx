@@ -17,7 +17,7 @@ const texts3 = ['DECENTRALIZATION', 'YourMoneyIsNotMoney', 'BLOCKCHAIN']
 
 export default function Keywords() {
   return (
-    <Box position="relative">
+    <Box position="relative" id="keywords">
       <KeywordsBalls
         style={{
           width: '100%',

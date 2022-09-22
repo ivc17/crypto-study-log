@@ -32,7 +32,12 @@ export default function Card({
         <Typography fontSize={22} fontWeight={700} mb={20}>
           {title ?? 'Title'}
         </Typography>
-        <Box>{children}</Box>
+        <Box
+          maxHeight={126}
+          sx={{ overflow: 'hidden', textOverflow: 'ellipsis' }}
+        >
+          {children}
+        </Box>
       </StyledBox>
       <Button
         style={{

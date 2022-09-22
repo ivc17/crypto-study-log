@@ -2,6 +2,9 @@ import { Box, Typography, styled, keyframes } from '@mui/material'
 import { ReactComponent as Icon } from 'assets/icon.svg'
 import gradient from 'assets/gradient.png'
 import useBreakpoint from 'hooks/useBreakpoint'
+import { useCallback } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { routes } from 'constant/routes'
 
 const appear = keyframes`
 0% {opacity: 0.6; transform:rotate(180deg); background-size:110% 100%;};
@@ -69,6 +72,22 @@ const SidePanel = styled('footer')(({ theme }) => ({
 
 export default function Footer() {
   const isDownSm = useBreakpoint('sm')
+  const navigate = useNavigate()
+
+  const scrollToHandle = useCallback(
+    (elementId: string) => {
+      const element = document.getElementById(elementId)
+      if (element) {
+        navigate(routes.home)
+        window.scrollTo({
+          behavior: 'smooth',
+          top: element.getBoundingClientRect().top + window.scrollY
+        })
+      }
+    },
+    [navigate]
+  )
+
   return (
     <Box zIndex={1} position="relative">
       <Box
@@ -95,20 +114,52 @@ export default function Footer() {
             width="100%"
             gridTemplateColumns={{ xs: '1fr', md: '1fr 1fr 1fr' }}
             justifyItems={{ xs: 'flex-end', md: 'center' }}
-            sx={{ '& p': { fontSize: { xs: 16, md: 20 } } }}
+            sx={{
+              '& p': {
+                fontSize: { xs: 16, md: 20 },
+                cursor: 'pointer',
+                '&:hover, :active': {
+                  textShadow: '0 0 5px #ffffff'
+                }
+              }
+            }}
             gap={{ xs: 5, md: 20 }}
           >
             <Typography>About developer</Typography>
             <Typography>Contact</Typography>
             <Typography>Other Works</Typography>
             <Typography mt={20} mb={20}></Typography>
-            <Typography mt={20} mb={20}>
+            <Typography
+              mt={20}
+              mb={20}
+              onClick={() => {
+                scrollToHandle('landing')
+              }}
+            >
               Back to top
             </Typography>
             <Typography mt={20} mb={20}></Typography>
-            <Typography>All logs</Typography>
-            <Typography>Keywords</Typography>
-            <Typography>About Project</Typography>
+            <Typography
+              onClick={() => {
+                scrollToHandle('logs')
+              }}
+            >
+              All logs
+            </Typography>
+            <Typography
+              onClick={() => {
+                scrollToHandle('keywords')
+              }}
+            >
+              Keywords
+            </Typography>
+            <Typography
+              onClick={() => {
+                scrollToHandle('about')
+              }}
+            >
+              About Project
+            </Typography>
           </Box>
         </Box>
 

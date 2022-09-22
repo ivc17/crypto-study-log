@@ -1,5 +1,5 @@
 import { Box, Button, Typography } from '@mui/material'
-import Card from 'components/Logs/Card'
+import Card from 'components/Card'
 import Modal from 'components/Modal'
 import { NOTES } from 'constant/notes'
 import { routes } from 'constant/routes'
